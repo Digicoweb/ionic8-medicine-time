@@ -129,7 +129,7 @@ async function goToPage(path) {
     try {
       router.push(path);
     } catch (error) {
-      console.log(error);
+      console.log("HOME FILE (Line 132) ------------> ", error);
     }
   }, 200);
 }

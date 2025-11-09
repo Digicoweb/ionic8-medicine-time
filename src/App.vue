@@ -6,13 +6,11 @@
   </ion-app>
 </template>
 
-<script setup lang="ts">
-import { useRouter } from "vue-router";
-import { onMounted, onUnmounted } from "vue";
+<script setup>
+import { onMounted } from "vue";
 import { IonApp } from "@ionic/vue";
 
-onMounted(async () => {
-});
+onMounted(async () => {});
 </script>
 
 <style></style>

@@ -1,30 +1,28 @@
 <template>
   <MainLayout>
-    <div class="content">Add Medicine Page</div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem deserunt tenetur similique, sit distinctio saepe, dolorum nulla, laborum blanditiis quidem rerum neque culpa voluptatum? Quam velit expedita officia? Voluptates, corrupti!</p>
+    <div class="content">
+      ADD MEDICINE
+    </div>
   </MainLayout>
 </template>
 
 <script setup>
-import { on } from "@/services/eventBus";
-import { useRouter } from "vue-router";
 import MainLayout from "@/layouts/MainLayout.vue";
-import { ref, onMounted } from "vue";
-const router = useRouter();
-const fullName = ref(null);
+import { reactive, ref, onMounted } from "vue";
 
-onMounted(async () => {
-  on("fullNameChanged", (name) => {
-    fullName.value = name;
-  });
+const form = reactive({
+  name: "",
+  dosage: 1,
+  unit_id: null,
+  interval_id: null,
+  period_days: 1,
+  start_date: "",
+  time: "",
+  description: "",
 });
 
-async function goToPage(path) {
-  if (Capacitor.getPlatform() === "ios" || Capacitor.getPlatform() === "android") Haptics.impact({ style: ImpactStyle.Medium });
-  setTimeout(() => {
-    router.push(path);
-  }, 500);
-}
+onMounted(async () => {
+});
 </script>
 
 <style scoped lang="scss">
@@ -37,6 +35,8 @@ async function goToPage(path) {
   position: fixed;
   left: 0;
   top: 0;
+  padding: 1rem;
+  gap: 0.5rem;
   @include mixins.fbx-column-ai-center-jc-start;
 }
 </style>
