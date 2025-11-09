@@ -1,0 +1,144 @@
+@mixin xy-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin fbx-ai-center-jc-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin fbx-ai-center-jc-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin fbx-ai-start-jc-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin fbx-ai-start-jc-end {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+@mixin fbx-ai-center-jc-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin fbx-ai-center-jc-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin fbx-ai-start-jc-between {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@mixin fbx-ai-stretch-jc-start {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+@mixin fbx-column-ai-center-jc-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin fbx-column-ai-center-jc-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin fbx-column-ai-start-jc-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin fbx-column-ai-start-jc-center {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@mixin fbx-column-ai-end-jc-end {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+@mixin fbx-column-ai-end-jc-center {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@mixin fbx-column-ai-start-jc-end {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+@mixin fbx-column-ai-stretch-jc-start {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+//=========================================================
+
+@mixin extra-large-device {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin large-device {
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+@mixin tablet-device {
+  // Medium devices (tablets, less than 992px)
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    @content;
+  }
+}
+
+@mixin mobile-device {
+  // Small devices (landscape phones, less than 768px)
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+
+// ======
+
+@mixin all-transition {
+  transition: 0.2s ease all;
+}

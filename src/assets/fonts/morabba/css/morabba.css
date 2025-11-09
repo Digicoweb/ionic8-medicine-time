@@ -1,0 +1,31 @@
+﻿@font-face {
+  font-family: Morabba;
+  font-style: normal;
+  font-weight: 200;
+  src: url("/src/assets/fonts/morabba/Morabba-UltraLight.woff") format("woff"),
+    url("/src/assets/fonts/morabba/Morabba-UltraLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Morabba;
+  font-style: normal;
+  font-weight: 900;
+  src: url("/src/assets/fonts/morabba/Morabba-Heavy.woff") format("woff"),
+    url("/src/assets/fonts/morabba/Morabba-Heavy.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Morabba;
+  font-style: normal;
+  font-weight: bold;
+  src: url("/src/assets/fonts/morabba/Morabba-Bold.woff") format("woff"),
+    url("/src/assets/fonts/morabba/Morabba-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Morabba;
+  font-style: normal;
+  font-weight: normal;
+  src: url("/src/assets/fonts/morabba/Morabba-Regular.woff") format("woff"),
+    url("/src/assets/fonts/morabba/Morabba-Regular.woff2") format("woff2");
+}
