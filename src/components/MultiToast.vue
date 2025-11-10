@@ -75,7 +75,7 @@ $warning-color: #ec8305;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 100000000;
+  z-index: 100000000000;
   .area {
     padding: 0 0.7rem;
     height: 2.2rem;

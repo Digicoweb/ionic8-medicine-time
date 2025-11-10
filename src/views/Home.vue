@@ -1,64 +1,62 @@
 <template>
-  <MainLayout>
-    <div class="content">
-      <!-- Img Area -->
-      <div class="img-area">
-        <img src="/src/assets/images/dr1.png" alt="" />
-        <div class="shadow"></div>
-      </div>
+  <div class="content">
+    <!-- Img Area -->
+    <div class="img-area">
+      <img src="/src/assets/images/dr1.png" alt="" />
+      <div class="shadow"></div>
+    </div>
 
-      <!-- Mini Chart -->
-      <div class="container">
-        <div class="mini-chart grid">
-          <div class="w-1-3">
-            <div class="item item-1">
-              <span>0</span>
-              <p>داروهای شما</p>
-            </div>
-          </div>
-          <div class="w-1-3">
-            <div class="item item-2">
-              <span>0</span>
-              <p>مورد امروز</p>
-            </div>
-          </div>
-          <div class="w-1-3">
-            <div class="item item-3">
-              <span>0</span>
-              <p>باقی‌مانده امروز</p>
-            </div>
+    <!-- Mini Chart -->
+    <div class="container">
+      <div class="mini-chart grid">
+        <div class="w-1-3">
+          <div class="item item-1">
+            <span>0</span>
+            <p>داروهای شما</p>
           </div>
         </div>
-      </div>
-
-      <!-- Empty Area -->
-      <div class="container">
-        <div class="empty-area">
-          <!-- Info -->
-          <div class="info">
-            <div class="row">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M12 8V13" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M11.9945 16H12.0035" stroke="#292D32" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <p>هنوز هیچ دارویی اضافه نکرده‌اید</p>
-            </div>
-            <span>داروهای خود را ثبت کنید تا مصرف آن‌ها را فراموش نکنید. اپ به شما یادآوری می‌کند و مدیریت داروها را آسان می‌سازد.</span>
+        <div class="w-1-3">
+          <div class="item item-2">
+            <span>0</span>
+            <p>مورد امروز</p>
           </div>
-          <!-- Main Btn -->
-          <button class="main-btn" @click="goToPage('/add-medicine')" v-wave>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M8 12H16" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M12 16V8" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <p>افزودن دارو</p>
-          </button>
+        </div>
+        <div class="w-1-3">
+          <div class="item item-3">
+            <span>0</span>
+            <p>باقی‌مانده امروز</p>
+          </div>
         </div>
       </div>
     </div>
-  </MainLayout>
+
+    <!-- Empty Area -->
+    <div class="container">
+      <div class="empty-area">
+        <!-- Info -->
+        <div class="info">
+          <div class="row">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M12 8V13" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M11.9945 16H12.0035" stroke="#292D32" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p>هنوز هیچ دارویی اضافه نکرده‌اید</p>
+          </div>
+          <span>داروهای خود را ثبت کنید تا مصرف آن‌ها را فراموش نکنید. اپ به شما یادآوری می‌کند و مدیریت داروها را آسان می‌سازد.</span>
+        </div>
+        <!-- Main Btn -->
+        <button class="main-btn" @click="goToPage('/add-medicine')" v-wave>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M8 12H16" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 16V8" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <p>افزودن دارو</p>
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -68,7 +66,6 @@ import { Capacitor } from "@capacitor/core";
 import { onMounted, onUnmounted } from "vue";
 import { Haptics, ImpactStyle } from "@capacitor/haptics";
 import { useIonRouter } from "@ionic/vue";
-import MainLayout from "@/layouts/MainLayout.vue";
 let { showToast } = useToast();
 const router = useIonRouter();
 let lastBackPress = 0;
@@ -185,18 +182,19 @@ async function goToPage(path) {
       padding: 1rem;
       width: calc(100% - 2rem);
       border-radius: 1rem;
-      border: 1px solid transparent;
       @include mixins.fbx-column-ai-center-jc-center;
       span {
         font-size: 2rem;
         height: 3rem;
       }
       p {
-        font-size: 0.8rem;
+        font-size: 0.76rem;
+        font-weight: 600;
+        white-space: nowrap;
         white-space: nowrap;
       }
       &.item-1 {
-        border: 1px solid rgba(#000, 0.3);
+        border: 1.4px solid rgba(#856f6f, 1);
       }
       &.item-2 {
         background: linear-gradient(0deg, rgba(variables.$success-color, 0.3) -20%, transparent 90%);
@@ -207,10 +205,7 @@ async function goToPage(path) {
     }
   }
   .empty-area {
-    margin-top: 2rem;
-    border: 1px dashed rgba(variables.$primary-color, 0.6);
-    padding: 1.5rem 2rem;
-    border-radius: 1rem;
+    margin-top: 3rem;
     .info {
       @include mixins.fbx-column-ai-start-jc-start;
     }
@@ -231,7 +226,6 @@ async function goToPage(path) {
     }
     span {
       font-size: 0.85rem;
-      opacity: 0.7;
       text-align: justify;
     }
     .main-btn {

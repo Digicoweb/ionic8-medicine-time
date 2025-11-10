@@ -3,23 +3,28 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import { defineConfig } from 'vite'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue({
       template: {
         compilerOptions: {
-          // isCustomElement: (tag) => tag.includes('-'),
         }
       }
     }),
     legacy()
   ],
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
+
+  // ✅ اینو اضافه کن
+  optimizeDeps: {
+    include: ['@number-flow/vue']
+  },
+
   build: {
     rollupOptions: {
       external: []

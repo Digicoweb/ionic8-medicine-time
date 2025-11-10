@@ -11,6 +11,7 @@ import "./assets/fonts/rubik/css/rubik.css";
 import "animate.css";
 import "aos/dist/aos.css";
 
+
 const app = createApp(App).use(VWave, { color: "red", initialOpacity: 0.5, easing: "ease-in" }).use(IonicVue).use(router);
 
 router.isReady().then(() => {

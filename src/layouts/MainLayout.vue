@@ -36,7 +36,6 @@ import { StatusBar, Style } from "@capacitor/status-bar";
 import { IonPage } from "@ionic/vue";
 import { setPreference, getPreference } from "@/services/preferences";
 import { onMounted, reactive, ref } from "vue";
-import { useToast } from "@/composables/useToast";
 import { Haptics, ImpactStyle } from "@capacitor/haptics";
 import { useBottomLoader } from "@/composables/useBottomLoader";
 const { showBottomLoading, hideBottomLoading } = useBottomLoader();
@@ -44,6 +43,7 @@ import MultiToast from "@/components/MultiToast.vue";
 import BottomLoading from "@/components/BottomLoading.vue";
 import Header from "@/components/Header.vue";
 import { Capacitor } from "@capacitor/core";
+import { useToast } from "@/composables/useToast";
 let { showToast } = useToast();
 let hasOpened = false;
 let fullName = ref(null);
@@ -73,7 +73,9 @@ async function setName() {
       showToast("نام شما با موفقیت ثبت شد", "success", 3000);
       showBottomLoading();
 
+      if (Capacitor.getPlatform() === "ios" || Capacitor.getPlatform() === "android") {
       Haptics.impact({ style: ImpactStyle.Medium });
+      }
 
       emit("fullNameChanged", form.data.fullName);
 
@@ -83,7 +85,9 @@ async function setName() {
       }, 1000);
     } catch (error) {}
   } else {
+    if (Capacitor.getPlatform() === "ios" || Capacitor.getPlatform() === "android") {
     Haptics.impact({ style: ImpactStyle.Medium });
+    }
     showToast("نام خود را وارد نمایید", "error");
   }
 }

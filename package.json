@@ -24,9 +24,12 @@
     "@capacitor/status-bar": "^7.0.3",
     "@ionic/vue": "^8.0.0",
     "@ionic/vue-router": "^8.0.0",
+    "@number-flow/vue": "^0.4.8",
+    "@webzlodimir/vue-bottom-sheet": "^3.0.5",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "ionicons": "^7.0.0",
+    "lucide-vue-next": "^0.553.0",
     "v-wave": "^3.0.4",
     "vue": "^3.3.0",
     "vue-router": "^4.2.0"
@@ -54,5 +57,6 @@
   "overrides": {
     "rollup": "4.44.0"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }

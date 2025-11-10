@@ -462,3 +462,12 @@ body {
 .m-b-50 {
   margin-bottom: 50px;
 }
+
+.bottom-sheet {
+  z-index: 1000000000 !important;
+}
+.bottom-sheet-content {
+  padding: 1rem 2rem;
+  min-height: 20rem;
+  padding-bottom: 2rem;
+}
