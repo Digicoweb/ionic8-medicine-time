@@ -22,7 +22,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['@capacitor-community/sqlite']
+      external: []
     }
   },
 })

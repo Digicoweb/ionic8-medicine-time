@@ -54,7 +54,7 @@ img {
 }
 html {
   font-size: 16px;
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
   &::before {

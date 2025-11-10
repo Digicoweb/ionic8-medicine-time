@@ -1,8 +1,30 @@
 <template>
   <div class="header-area">
     <div class="banner-top"></div>
+
+    <header class="header-1">
+      <!-- Right -->
+      <div class="right">
+        <div class="avatar">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="info">
+          <span>خوش‌آمدید</span>
+          <p>{{ fullName }}</p>
+        </div>
+      </div>
+      <!-- Left -->
+      <div class="left">
+        <p>وقت‌دارو</p>
+        <img src="/src/assets/images/logo.png" alt="" />
+      </div>
+    </header>
+
     <!-- Banner -->
-    <header v-if="false">
+    <header class="header-2" v-if="false">
       <div class="right">
         <!-- Menu Icon  -->
         <div class="menu-icon" @click="openMenuArea()" v-wave>
@@ -138,11 +160,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import { on } from "@/services/eventBus";
 import { ref, onMounted, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 const route = useRoute();
 const router = useRouter();
+const fullName = ref(null);
 
 const visible_menu_area = ref(false);
 function openMenuArea() {
@@ -160,6 +184,10 @@ function closeMenuArea() {
   }, 500);
 }
 onMounted(async () => {
+  on("fullNameChanged", (name) => {
+    fullName.value = name;
+  });
+
   if (route.hash === "#menu") {
     openMenuArea();
   }
@@ -195,29 +223,76 @@ watch(
       font-family: "roboto" !important;
     }
   }
-  header {
-    height: 7vh;
-    width: 100%;
+  header.header-1 {
+    padding-right: 5vw;
+    padding-left: 5vw;
+    width: calc(100% - 10vw);
+    height: 8vh;
+    margin-bottom: 1.5rem;
     background: variables.$light-color;
-    overflow: hidden;
     box-shadow: 0 10px 30px rgba(#000, 0.07);
     position: relative;
     @include mixins.fbx-ai-center-jc-between;
     .right {
-      height: 100%;
       @include mixins.fbx-ai-center-jc-start;
-      .menu-icon {
-        height: 150%;
-        width: 3rem;
+      .avatar {
+        height: 2.2rem;
+        width: 2.2rem;
+        border: 1px solid rgba(#000, 0.3);
+        border-radius: 10rem;
+        margin-left: 0.5rem;
         @include mixins.fbx-ai-center-jc-center;
-        path {
-          stroke: variables.$dark-color;
+        svg {
+          width: 1.2rem;
+        }
+      }
+      .info {
+        @include mixins.fbx-column-ai-start-jc-start;
+        span {
+          font-size: 0.85rem;
+          margin-bottom: -0.2rem;
+        }
+        p {
+          font-size: 0.93rem;
+          font-weight: 600;
         }
       }
     }
-    .logo {
-      height: 2rem;
-      @include mixins.xy-center;
+    .left {
+      @include mixins.fbx-ai-center-jc-end;
+      p {
+        font-size: 1.4rem;
+        font-weight: 600;
+        font-family: "morabba" !important;
+        margin-left: 0.5rem;
+      }
+      img {
+        height: 3.5rem;
+      }
+    }
+    header.header-2 {
+      height: 7vh;
+      width: 100%;
+      background: variables.$light-color;
+      box-shadow: 0 10px 30px rgba(#000, 0.07);
+      position: relative;
+      @include mixins.fbx-ai-center-jc-between;
+      .right {
+        height: 100%;
+        @include mixins.fbx-ai-center-jc-start;
+        .menu-icon {
+          height: 150%;
+          width: 3rem;
+          @include mixins.fbx-ai-center-jc-center;
+          path {
+            stroke: variables.$dark-color;
+          }
+        }
+      }
+      .logo {
+        height: 2rem;
+        @include mixins.xy-center;
+      }
     }
   }
 }

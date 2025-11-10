@@ -1,30 +1,6 @@
 <template>
   <MainLayout>
     <div class="content">
-      <!-- Main Top -->
-      <div class="container">
-        <div class="main-top">
-          <!-- Right -->
-          <div class="right">
-            <div class="avatar">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div class="info">
-              <span>خوش‌آمدید</span>
-              <p>{{ fullName }}</p>
-            </div>
-          </div>
-          <!-- Left -->
-          <div class="left">
-            <p>وقت‌دارو</p>
-            <img src="/src/assets/images/logo.png" alt="" />
-          </div>
-        </div>
-      </div>
-
       <!-- Img Area -->
       <div class="img-area">
         <img src="/src/assets/images/dr1.png" alt="" />
@@ -35,7 +11,7 @@
       <div class="container">
         <div class="mini-chart grid">
           <div class="w-1-3">
-            <div class="item">
+            <div class="item item-1">
               <span>0</span>
               <p>داروهای شما</p>
             </div>
@@ -89,21 +65,16 @@
 import { App as CapacitorApp } from "@capacitor/app";
 import { useToast } from "@/composables/useToast";
 import { Capacitor } from "@capacitor/core";
-import { on } from "@/services/eventBus";
-import { ref, onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted } from "vue";
 import { Haptics, ImpactStyle } from "@capacitor/haptics";
 import { useIonRouter } from "@ionic/vue";
 import MainLayout from "@/layouts/MainLayout.vue";
 let { showToast } = useToast();
 const router = useIonRouter();
-const fullName = ref(null);
 let lastBackPress = 0;
 let backHandler = null;
 
 onMounted(async () => {
-  on("fullNameChanged", (name) => {
-    fullName.value = name;
-  });
   if (Capacitor.getPlatform() === "ios" || Capacitor.getPlatform() === "android") {
     backHandler = await CapacitorApp.addListener("backButton", () => {
       const now = Date.now();
@@ -141,6 +112,7 @@ async function goToPage(path) {
 .content {
   height: calc(100vh);
   width: 100vw;
+  padding-top: 2rem;
   overflow-y: auto;
   @include mixins.fbx-column-ai-center-jc-start;
   .main-top {
@@ -213,6 +185,7 @@ async function goToPage(path) {
       padding: 1rem;
       width: calc(100% - 2rem);
       border-radius: 1rem;
+      border: 1px solid transparent;
       @include mixins.fbx-column-ai-center-jc-center;
       span {
         font-size: 2rem;
@@ -221,6 +194,9 @@ async function goToPage(path) {
       p {
         font-size: 0.8rem;
         white-space: nowrap;
+      }
+      &.item-1 {
+        border: 1px solid rgba(#000, 0.3);
       }
       &.item-2 {
         background: linear-gradient(0deg, rgba(variables.$success-color, 0.3) -20%, transparent 90%);
@@ -233,7 +209,7 @@ async function goToPage(path) {
   .empty-area {
     margin-top: 2rem;
     border: 1px dashed rgba(variables.$primary-color, 0.6);
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     border-radius: 1rem;
     .info {
       @include mixins.fbx-column-ai-start-jc-start;

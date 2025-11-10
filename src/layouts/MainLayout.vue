@@ -102,9 +102,9 @@ App.addListener("appStateChange", ({ isActive }) => {
 @use "@/assets/styles/variables";
 @use "@/assets/styles/mixins";
 .layout-content {
+  padding-top: 12vh;
   height: calc(100vh - 10vh);
-  padding-top: 10vh;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 .set-name-area {
   height: 100vh;
